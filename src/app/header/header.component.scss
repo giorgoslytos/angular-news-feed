@@ -1,0 +1,32 @@
+.navbar {
+  background-color: #254a75;
+  
+  .navbar-nav {
+    margin: 0 0 0 auto;
+  }
+  .nav-link {
+    color: white;
+  }
+}
+
+.background-img {
+  height: 300px;
+  width: 100%;
+}
+
+.img-thumbnail {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  transform: translateY(120px);
+}
+.header {
+  background-image: url('../../assets/images/background-image.png');
+  height: 300px;
+  position: relative;
+}
+
+.username{
+  transform: translate(177px, 44px);
+  
+}

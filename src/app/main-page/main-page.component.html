@@ -1,0 +1,44 @@
+<div class="container">
+  <div>
+    <div class="input-group mb-3">
+      <input
+        [(ngModel)]="query"
+        (ngModelChange)="debouncedSearch()"
+        type="text"
+        class="form-control"
+        placeholder="Search Channels"
+        aria-label="Search Channels"
+        aria-describedby="basic-addon2"
+      />
+      <div class="input-group-append">
+        <ul class="navbar-nav float-right">
+          <li class="nav-item dropdown">
+            <div ngbDropdown class="d-inline-block">
+              <button
+                class="btn btn-outline-primary nav-link dropdown-toggle"
+                id="dropdownBasic1"
+                ngbDropdownToggle
+              >
+                Search Channels
+              </button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic">
+                <button
+                  ngbDropdownItem
+                  *ngFor="let category of categories"
+                  (click)="categorySelected(category); debouncedSearch()"
+                >
+                  {{ category }}
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card-deck">
+    <ng-container *ngFor="let article of news">
+      <app-article [article]="article"></app-article>
+    </ng-container>
+  </div>
+</div>
